@@ -7,6 +7,9 @@
     "clickup-cli": "./bin/run.js"
   },
   "bugs": "https://github.com/maxjander/clickup-cli/issues",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "@clack/prompts": "^0.11.0",
     "@oclif/core": "^4",
