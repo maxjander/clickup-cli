@@ -17,11 +17,5 @@
   "hooks": {
     "before:init": ["pnpm run lint", "pnpm run build"],
     "after:bump": "pnpm run build"
-  },
-  "plugins": {
-    "@release-it/conventional-changelog": {
-      "preset": "conventionalcommits",
-      "infile": "CHANGELOG.md"
-    }
   }
 }
