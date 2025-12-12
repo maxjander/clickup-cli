@@ -11,7 +11,8 @@
     "releaseName": "v${version}"
   },
   "npm": {
-    "publish": true
+    "publish": true,
+    "access": "public"
   },
   "hooks": {
     "before:init": ["pnpm run lint", "pnpm run build"],
@@ -19,21 +20,7 @@
   },
   "plugins": {
     "@release-it/conventional-changelog": {
-      "preset": {
-        "name": "conventionalcommits",
-        "types": [
-          { "type": "feat", "section": "Features" },
-          { "type": "fix", "section": "Bug Fixes" },
-          { "type": "perf", "section": "Performance" },
-          { "type": "refactor", "section": "Refactoring" },
-          { "type": "docs", "section": "Documentation" },
-          { "type": "chore", "hidden": true },
-          { "type": "style", "hidden": true },
-          { "type": "test", "hidden": true },
-          { "type": "ci", "hidden": true },
-          { "type": "build", "hidden": true }
-        ]
-      },
+      "preset": "conventionalcommits",
       "infile": "CHANGELOG.md"
     }
   }
