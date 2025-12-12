@@ -1,0 +1,96 @@
+{
+  "name": "@tjabo/clickup-cli",
+  "description": "a clickup-api cli to help get urgent tasks",
+  "version": "0.0.0",
+  "author": "Max Jander @maxjander",
+  "bin": {
+    "clickup-cli": "./bin/run.js"
+  },
+  "bugs": "https://github.com/maxjander/clickup-cli/issues",
+  "dependencies": {
+    "@clack/prompts": "^0.11.0",
+    "@oclif/core": "^4",
+    "@oclif/plugin-help": "^6",
+    "@oclif/plugin-plugins": "^5"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^20.2.0",
+    "@commitlint/config-conventional": "^20.2.0",
+    "@eslint/compat": "^1",
+    "@oclif/prettier-config": "^0.2.1",
+    "@oclif/test": "^4",
+    "@release-it/conventional-changelog": "^10.0.3",
+    "@types/chai": "^4",
+    "@types/mocha": "^10",
+    "@types/node": "^18",
+    "chai": "^4",
+    "eslint": "^9",
+    "eslint-config-oclif": "^6",
+    "eslint-config-prettier": "^10",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
+    "mocha": "^10",
+    "oclif": "^4",
+    "release-it": "^19.1.0",
+    "shx": "^0.3.3",
+    "ts-node": "^10",
+    "typescript": "^5"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "./bin",
+    "./dist",
+    "./oclif.manifest.json"
+  ],
+  "homepage": "https://github.com/maxjander/clickup-cli",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "dist/index.js",
+  "type": "module",
+  "oclif": {
+    "bin": "clickup-cli",
+    "dirname": "clickup-cli",
+    "commands": "./dist/commands",
+    "plugins": [
+      "@oclif/plugin-help",
+      "@oclif/plugin-plugins"
+    ],
+    "topicSeparator": " ",
+    "topics": {
+      "config": {
+        "description": "Manage CLI configuration"
+      },
+      "tasks": {
+        "description": "Manage ClickUp tasks"
+      }
+    }
+  },
+  "repository": "maxjander/clickup-cli",
+  "scripts": {
+    "dev": "./bin/dev.js",
+    "build": "shx rm -rf dist && tsc -b",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "postpack": "shx rm -f oclif.manifest.json",
+    "posttest": "pnpm run lint",
+    "prepack": "oclif manifest && oclif readme",
+    "test": "mocha --forbid-only \"test/**/*.test.ts\"",
+    "version": "oclif readme && git add README.md",
+    "prepare": "husky",
+    "release": "release-it",
+    "release:patch": "release-it patch",
+    "release:minor": "release-it minor",
+    "release:major": "release-it major",
+    "release:dry": "release-it --dry-run"
+  },
+  "lint-staged": {
+    "*.{ts,js}": [
+      "eslint --fix"
+    ]
+  },
+  "types": "dist/index.d.ts"
+}
