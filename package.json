@@ -1,7 +1,7 @@
 {
   "name": "@tjabo/clickup-cli",
   "description": "a clickup-api cli to help get urgent tasks",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Max Jander @maxjander",
   "bin": {
     "clickup-cli": "./bin/run.js"
